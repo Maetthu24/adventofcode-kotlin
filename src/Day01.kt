@@ -1,17 +1,24 @@
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
+
+    fun parseInput(input: String) = input.split("\n\n").map { part ->
+        part.lines().sumOf { it.toInt() }
     }
 
-    fun part2(input: List<String>): Int {
-        return input.size
+    fun part1(input: List<Int>): Int {
+        return input.max()
+    }
+
+    fun part2(input: List<Int>): Int {
+        return input.sortedDescending().take(3).sum()
     }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
+    val testInput = parseInput(readText("Day01_test"))
+    val testResult = part1(testInput)
+    val testExpected = 24000
+    check(testResult == testExpected) { "testResult should be $testExpected, but is $testResult" }
 
-    val input = readInput("Day01")
+    val input = parseInput(readText("Day01"))
     println(part1(input))
     println(part2(input))
 }
