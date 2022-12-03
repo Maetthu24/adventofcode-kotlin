@@ -16,40 +16,36 @@ fun main() {
     }
 
     fun Char.draw(): Char {
-        when(this) {
-            'A' -> return 'X'
-            'B' -> return 'Y'
-            'C' -> return 'Z'
+        return when(this) {
+            'A' -> 'X'
+            'B' -> 'Y'
+            else -> 'Z'
         }
-        return '.'
     }
 
     fun Char.win(): Char {
-        when(this) {
-            'A' -> return 'Y'
-            'B' -> return 'Z'
-            'C' -> return 'X'
+        return when(this) {
+            'A' -> 'Y'
+            'B' -> 'Z'
+            else -> 'X'
         }
-        return '.'
     }
 
     fun Char.lose(): Char {
-        when(this) {
-            'A' -> return 'Z'
-            'B' -> return 'X'
-            'C' -> return 'Y'
+        return when(this) {
+            'A' -> 'Z'
+            'B' -> 'X'
+            else -> 'Y'
         }
-        return '.'
     }
 
     fun part2(input: List<String>): Int {
         return input.sumOf {
             val p1 = it.first()
-            var p2 = '.'
-            when (it.last()) {
-                'X' -> p2 = p1.lose()
-                'Y' -> p2 = p1.draw()
-                'Z' -> p2 = p1.win()
+            val p2 = when (it.last()) {
+                'X' -> p1.lose()
+                'Y' -> p1.draw()
+                else -> p1.win()
             }
 
             var s = 0
