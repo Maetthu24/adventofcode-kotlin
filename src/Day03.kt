@@ -21,7 +21,6 @@ fun main() {
     fun part2(input: List<String>): Int {
         var sum = 0
         for (lines in input.windowed(3, step = 3)) {
-            val possibleChars = lines[0].toMutableList()
             for (c in lines[0]) {
                 if (lines[1].contains(c) && lines[2].contains(c)) {
                     sum += if (c.isLowerCase()) {
