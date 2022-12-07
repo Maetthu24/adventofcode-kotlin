@@ -1,11 +1,8 @@
 fun main() {
     fun findMessage(input: String, length: Int): Int {
-        for (el in input.windowed(length).withIndex()) {
-            if (el.value.length == el.value.toSet().size) {
-                return el.index + length
-            }
-        }
-        return -1
+        return input.windowed(length).indexOfFirst {
+            it.length == it.toSet().size
+        } + length
     }
 
     val day = "06"
