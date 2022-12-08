@@ -1,3 +1,5 @@
+package year2022
+
 fun main() {
 
     class Dir(val name: String,

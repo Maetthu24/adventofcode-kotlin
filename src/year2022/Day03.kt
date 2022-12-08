@@ -1,3 +1,5 @@
+package year2022
+
 fun main() {
     fun part1(input: List<String>): Int {
         var sum = 0

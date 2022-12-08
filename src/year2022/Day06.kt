@@ -1,3 +1,5 @@
+package year2022
+
 fun main() {
     fun findMessage(input: String, length: Int): Int {
         return input.windowed(length).indexOfFirst {

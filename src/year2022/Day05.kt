@@ -1,3 +1,5 @@
+package year2022
+
 import kotlin.collections.ArrayDeque
 
 fun main() {

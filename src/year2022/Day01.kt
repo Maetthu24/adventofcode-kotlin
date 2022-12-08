@@ -1,3 +1,5 @@
+package year2022
+
 fun main() {
 
     fun parseInput(input: String) = input.split("\n\n").map { part ->

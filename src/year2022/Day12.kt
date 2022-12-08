@@ -1,3 +1,5 @@
+package year2022
+
 fun main() {
 
     fun part1(input: List<String>): Int {
@@ -8,7 +10,7 @@ fun main() {
         return 0
     }
 
-    val day = "15"
+    val day = "12"
 
     // Read inputs
     val testInput = readInput("Day${day}_test")
